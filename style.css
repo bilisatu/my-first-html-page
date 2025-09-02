@@ -1,20 +1,57 @@
-body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px auto;
-            max-width: 600px;
-            background: #f0f8ff;
-            color: #333;
-            padding: 20px;
+/* Small reset and sensible defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-        }
+:root {
+  --bg: #f0f8ff;    /* aliceblue */
+  --text: #333;
+  --heading: #2c3e50;
+  --card: #fff;
+  --shadow: 0 2px 5px rgba(0,0,0,0.08);
+  --radius: 8px;
+  --space: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.site-header,
+.site-footer {
+  padding: var(--space);
+  text-align: center;
+}
+
+#main-content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space);
+}
+
 h1 {
-            color: #2c3e50;
+  color: var(--heading);
+  margin: 0.5em 0;
 }
 
 p {
-            background: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 12px 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--heading);
+  outline-offset: 2px;
 }
